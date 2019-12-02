@@ -4,7 +4,7 @@ const app = express(); // crea una instancia del constructor express, al que lla
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const users=[];
+const users={};
 app.get('/', function(req,res){ //GET 
     res.send('Hello World!')
 })
@@ -16,6 +16,7 @@ app.get('/users', function(req,res){ //GET
 app.get('/user/:id', function(req,res){ //GET 
     console.log(req.params.id)
     res.send(users)
+    //iteracion al array
 })
 //create a user
 app.post ('/user', function(req,res){//Post add user id,name
