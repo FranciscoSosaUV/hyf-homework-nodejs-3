@@ -13,11 +13,9 @@ app.get('/users', function(req,res){ //GET
     res.send(users)
 })
 
-app.get('/users/:id', function(req,res){ //GET 
+app.get('/user/:id', function(req,res){ //GET 
     console.log(req.params.id)
-    res.json({
-        user: req.params.id
-    })
+    res.send(users)
 })
 //create a user
 app.post ('/users', function(req,res){//Post add user id,name
@@ -28,6 +26,7 @@ app.post ('/users', function(req,res){//Post add user id,name
         id:req.body.id,
         name: req.body.name
     })
+        users.push(req.body.id)
         res.send(userjson)
         
 })
