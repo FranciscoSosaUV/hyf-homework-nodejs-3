@@ -18,7 +18,7 @@ app.get('/user/:id', function(req,res){ //GET
     res.send(users)
 })
 //create a user
-app.post ('/users', function(req,res){//Post add user id,name
+app.post ('/user', function(req,res){//Post add user id,name
     const id=req.body.id;
     const name=req.body.name
 
