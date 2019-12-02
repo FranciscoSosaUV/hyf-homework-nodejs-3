@@ -10,9 +10,7 @@ app.get('/', function(req,res){ //GET
 })
 
 app.get('/users', function(req,res){ //GET 
-    res.json ({
-        user:[]
-    })
+    res.send({users:[]})
 })
 
 app.listen(3000,function(){
