@@ -9,6 +9,12 @@ app.get('/', function(req,res){ //GET
     res.send('Hello World!')
 })
 
+app.get('/users', function(req,res){ //GET 
+    res.json ({
+        user:""
+    })
+})
+
 app.listen(3000,function(){
     console.log("server is running")  // iniciará el servidor localmente en el puerto que proporcione como primer argumento 
     })
