@@ -26,7 +26,7 @@ app.post ('/user', function(req,res){//Post add user id,name
         id:req.body.id,
         name: req.body.name
     })
-        users.push(req.body.id)
+        users.push(req.body.id,req.body.name)
         res.send(userjson)
         
 })
