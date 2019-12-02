@@ -13,6 +13,25 @@ app.get('/users', function(req,res){ //GET
     res.send(users)
 })
 
+app.get('/users/:id', function(req,res){ //GET 
+    console.log(req.params.id)
+    res.json({
+        user: req.params.id
+    })
+})
+//create a user
+app.post ('/users', function(req,res){//Post add user id,name
+    const id=req.body.id;
+    const name=req.body.name
+
+    const userjson = ({
+        id:req.body.id,
+        name: req.body.name
+    })
+        res.send(userjson)
+        
+})
+
 app.listen(3000,function(){
     console.log("server is running")  // iniciará el servidor localmente en el puerto que proporcione como primer argumento 
     })
