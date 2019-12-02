@@ -4,9 +4,13 @@ const app = express(); // crea una instancia del constructor express, al que lla
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-
+const users=[];
 app.get('/', function(req,res){ //GET 
     res.send('Hello World!')
+})
+
+app.get('/users', function(req,res){ //GET 
+    res.send(users)
 })
 
 app.listen(3000,function(){
