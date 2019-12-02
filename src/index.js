@@ -6,10 +6,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req,res){ //GET 
-    res.json({
-         success: true,
-         message: 'Hello world!'
-    })
+    res.send('Hello World!')
 })
 
 app.listen(3000,function(){
