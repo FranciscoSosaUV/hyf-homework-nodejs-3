@@ -11,7 +11,7 @@ app.get('/', function(req,res){ //GET
 
 app.get('/users', function(req,res){ //GET 
     res.json ({
-        user:""
+        user:[]
     })
 })
 
