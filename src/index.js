@@ -4,7 +4,7 @@ const app = express(); // crea una instancia del constructor express, al que lla
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const users={};
+const users=[];
 app.get('/', function(req,res){ //GET 
     res.send('Hello World!')
 })
@@ -15,17 +15,23 @@ app.get('/users', function(req,res){ //GET
 
 app.get('/user/:id', function(req,res){ //GET 
     console.log(req.params.id)
-    res.send(users)
+    for (var i=0;i<=users.length;i++){
+        if(i==req.params.id){
+            res.send(users[i])
+        }
+         else{res.send("Error user not found :'(")}
+    }
+    
     //iteracion al array
 })
 //create a user
-app.post ('/user', function(req,res){//Post add user id,name
-    const id=req.body.id;
-    const name=req.body.name
+app.post ('/user', function(req,res){//Post add user name
+    const id=users.length;
+    
 
     const userjson = ({
-        id:req.body.id,
-        name: req.body.name
+        id:id,
+        
     })
         users.push(userjson)
         res.send(userjson)
